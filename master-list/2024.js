@@ -37,8 +37,12 @@ var D4 = B4.getDate();
 var Yr4 = B4.getFullYear();
 var today1 = (M4 < 10? '0' + M4 : M4) + "/" + (D4 < 10 ? '0' + D4 : D4) + "/" + Yr4;
 
-var line1 = isNaN(Math.round(Number((new Date(Edate[0]).getTime() - new Date(Sdate[0]).getTime())/(24*60*60*1000)),0)) ? Math.round(Number((new Date(today).getTime() - new Date(Sdate[0]).getTime())/(60*60*24*1000)),0):Math.round(Number((new Date(Edate[0]).getTime()-new Date(Sdate[0]).getTime())/(24*60*60*1000)),0);
-var line2 = Math.round(Number((new Date(Edate[1]).getTime()-new Date(Sdate[1]).getTime())/(24*60*60*1000)),0);
-var line3 = Math.round(Number((new Date(today1).getTime() - new Date(Sdate[1]).getTime())/(60*60*24*1000)),0);
+var line1 = isNaN(Math.round(Number((new Date(Edate[0]).getTime() - new Date(Sdate[0]).getTime()) / (24 * 60 *60 * 1000)), 0)) ? 
+                  Math.round(Number((new Date(today).getTime() - new Date(Sdate[0]).getTime()) / (60 * 60 * 24 *1000)), 0) : 
+                  Math.round(Number((new Date(Edate[0]).getTime() - new Date(Sdate[0]).getTime()) / (24 * 60 * 60 * 1000)), 0);
+
+
+var line2 = Math.round(Number((new Date(Edate[1]).getTime() - new Date(Sdate[1]).getTime()) / (24 * 60 * 60 * 1000)), 0);
+var line3 = Math.round(Number((new Date(today1).getTime() - new Date(Sdate[1]).getTime()) / (60 * 60 * 24 * 1000)), 0);
 var line4 = isNaN(line2) ? line3: line2;
 valueToSet = isNaN(line4) ? line1.toFixed(0) : line1.toFixed(0) + '<br>' + line4.toFixed(0);
